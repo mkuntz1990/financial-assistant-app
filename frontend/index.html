@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Assistant App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Financial Assistant</h1>
+        <p>Your personal finance dashboard for families.</p>
+        <!--
+        Offline Support:
+        - This app uses a service worker to cache static assets for offline use.
+        - All core features (dashboard, version, update UI) work offline as long as the backend is running locally.
+        - No CDN dependencies: all scripts and styles are local.
+        -->
+    <button id="check-backend">Check Backend Connection</button>
+    <div id="backend-status"></div>
+    <div id="app-version" style="margin-top:10px; font-size:0.95em; color:#555;"></div>
+    <hr style="margin:30px 0 20px 0;">
+    <div id="update-section">
+        <h2>App Updates</h2>
+        <button id="check-updates">Check for Updates</button>
+        <button id="update-now" disabled>Update Now</button>
+        <div id="update-status" style="margin-top:10px; font-size:0.95em; color:#555;"></div>
+    </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

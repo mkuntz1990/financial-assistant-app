@@ -1,0 +1,12 @@
+{
+  "name": "financial-assistant-electron",
+  "version": "0.1.0",
+  "main": "main.js",
+  "description": "Desktop wrapper for Financial Assistant App",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^30.0.0"
+  }
+}

@@ -120,23 +120,57 @@ Transform from a simple budgeting tool into a comprehensive, intelligent financi
 **What Needs to Be Built:**
 
 #### Phase 1: Basic Metrics
-- [x] Real-time account balances (checking, savings, credit cards)
-- [x] Total monthly income display
-- [x] Total fixed expenses display
-- [x] Available spending money calculation
-- [x] Month-to-date spending summary
+- [ ] Real-time account balances (checking, savings, credit cards)
+  - Connect to backend to fetch up-to-date balances for all linked accounts
+  - Display balances with account type icons and color coding
+  - Support for manual entry and future bank sync integration
+- [ ] Total monthly income display
+  - Aggregate all income sources for the current month
+  - Visual summary card with breakdown by source
+  - Responsive design for mobile and desktop
+- [ ] Total fixed expenses display
+  - Sum all recurring bills and fixed expenses for the month
+  - Show breakdown by category (housing, utilities, etc.)
+  - Highlight upcoming due dates
+- [ ] Available spending money calculation
+  - Calculate available funds: income minus fixed expenses and bills
+  - Visual indicator for safe-to-spend amount
+  - Update in real time as transactions are entered
+- [ ] Month-to-date spending summary
+  - Aggregate all spending for the current month
+  - Show progress bar vs. budgeted amount
+  - Highlight categories with highest spending
+  - Drill-down to transaction list from summary
 
 #### Phase 2: Intelligent Insights
-- [x] Spending velocity indicator (how fast you're spending)
-- [x] Days until next paycheck countdown
-- [x] "Money left per day" calculator
-- [x] Overdraft warning system (color-coded alerts)
-- [x] Budget health score (0-100)
-- [x] Comparison to previous months
+- [ ] Spending velocity indicator (how fast you're spending)
+  - Calculate average daily/weekly spending rate
+  - Visualize spending pace with color-coded meter
+  - Alert if spending is above safe rate for the month
+- [ ] Days until next paycheck countdown
+  - Calculate and display days remaining until next expected income
+  - Show countdown prominently on dashboard
+  - Support multiple pay schedules
+- [ ] "Money left per day" calculator
+  - Divide remaining safe-to-spend by days left in month
+  - Show daily budget target and progress
+  - Alert if daily average is exceeded
+- [ ] Overdraft warning system (color-coded alerts)
+  - Monitor projected balances and upcoming bills
+  - Display warnings if risk of overdraft is detected
+  - Color-coded banners (green/yellow/red) for risk level
+- [ ] Budget health score (0-100)
+  - Calculate score based on spending, income, and bill status
+  - Visual health meter with explanation of score
+  - Suggest actions to improve score
+- [ ] Comparison to previous months
+  - Show month-over-month trends for income, expenses, and spending
+  - Visual charts comparing current and past months
+  - Highlight improvements and areas of concern
 
 #### Phase 3: Predictive Analytics
-**Current Status:** ✅ COMPLETE
-- [x] Projected end-of-month balance
+**Current Status:**
+- [ ] Projected end-of-month balance
   - Comprehensive calculation based on current balance, expected income, remaining bills, and spending velocity
   - Real-time projection with health status indicators (healthy, caution, warning, critical)
   - Detailed breakdown showing starting balance, expected income with upcoming paychecks, unpaid bills, and projected variable spending
@@ -145,7 +179,7 @@ Transform from a simple budgeting tool into a comprehensive, intelligent financi
   - Interactive modal with full calculation details
   - Visual color-coded status indicators
   - Integrated into Dashboard Overview tab
-- [x] Upcoming bill reminders (next 7 days)
+- [ ] Upcoming bill reminders (next 7 days)
     - Comprehensive upcoming bills display in Alerts & Warnings tab
     - Bills grouped by urgency level (Urgent: 1-2 days, Soon: 3-5 days, Upcoming: 6-7 days)
     - Color-coded urgency indicators (Red/Yellow/Green)
@@ -157,7 +191,7 @@ Transform from a simple budgeting tool into a comprehensive, intelligent financi
     - Bill management tips and recommendations
     - Responsive design for mobile devices
     - Integrated into Dashboard Alerts tab
-- [x] Spending pattern alerts ("You usually spend more on groceries this week")
+- [ ] Spending pattern alerts ("You usually spend more on groceries this week")
   - Historical pattern analysis (4-6 months of transaction data)
   - Weekly and monthly pattern detection
   - Category-specific variance tracking
@@ -168,7 +202,7 @@ Transform from a simple budgeting tool into a comprehensive, intelligent financi
   - Real-time recommendations
   - Beautiful UI with color-coded alerts
   - Integrated into Dashboard Alerts & Warnings tab
-- [x] Smart AI-powered recommendations
+- [ ] Smart AI-powered recommendations
   - **Comprehensive Financial Analysis Engine:** 9 analysis phases covering all aspects of user finances
   - **Multi-Dimensional Data Gathering:** Account balances, income sources, fixed expenses, spending patterns, historical trends (6 months)
   - **Intelligent Priority System:** Critical/Urgent/High/Medium/Low priority classification
@@ -200,44 +234,43 @@ Transform from a simple budgeting tool into a comprehensive, intelligent financi
 **Current Status:** Phase 1 Complete ✅
 **What Needs to Be Built:**
 
-#### Phase 1: Basic Income Management ✅ COMPLETE
-- [x] Add/edit/delete income sources
+#### Phase 1: Basic Income Management
+- [ ] Add/edit/delete income sources
   - Full CRUD operations with comprehensive modal form
   - Real-time validation and error handling
   - Support for multiple household earners
-- [x] Income source types:
-  - Primary salary ✅
-  - Secondary salary ✅
-  - Freelance/side hustle ✅
-  - Investment income ✅
-  - Rental income ✅
-  - Other income ✅
+- [ ] Income source types:
+  - Primary salary
+  - Secondary salary
+  - Freelance/side hustle
+  - Investment income
+  - Rental income
+  - Other income
   - Each type has appropriate icon and display
-- [x] Frequency settings (weekly, bi-weekly, monthly, annual)
+- [ ] Frequency settings (weekly, bi-weekly, monthly, annual)
   - All 4 frequencies fully supported
   - Automatic monthly equivalent calculation
   - Proper handling in all displays and calculations
-- [x] Expected vs actual income tracking
+- [ ] Expected vs actual income tracking
   - Compare actual payments to expected amounts
   - Visual variance indicators (above/below)
   - Current month tracking with percentage variance
   - Payment history display
-- [x] Tax withholding calculations
+- [ ] Tax withholding calculations
   - Federal tax percentage
   - State tax percentage
   - Social Security (6.2% default)
   - Medicare (1.45% default)
   - Other deductions (health insurance, 401k, etc.)
   - Real-time calculator in form
-- [x] Net income calculator (after taxes/deductions)
+- [ ] Net income calculator (after taxes/deductions)
   - Comprehensive breakdown display
   - Shows gross, all deductions, and net
   - Monthly net equivalent for all frequencies
   - Visual indicators for deduction impact
   - Detailed deduction breakdown per source
 
-#### Phase 2: Advanced Features
-- [x] Multiple income earners in household
+- [ ] Multiple income earners in household
   - Enhanced backend API with comprehensive earner statistics (gross/net totals, source counts, contribution percentages)
   - New "By Earner" sub-tab in Income section displaying individual earner cards
   - Visual contribution bars showing each earner's percentage of household income
@@ -247,7 +280,7 @@ Transform from a simple budgeting tool into a comprehensive, intelligent financi
   - Responsive design for mobile devices
   - Realistic test data for ~$60k/year household with two earners
   - Full integration with existing income tracking features
-- [x] Variable income tracking (for commission/freelance) ✅ COMPLETE
+- [ ] Variable income tracking (for commission/freelance)
   - Auto-detection of variable income types (freelance, investment, other)
   - Real-time average calculation from payment history
   - Variability metrics (coefficient of variation with detailed calculations)
@@ -267,7 +300,7 @@ Transform from a simple budgeting tool into a comprehensive, intelligent financi
   - Responsive mobile-optimized layout
   - Backend `/api/income/<id>/variable-analysis` endpoint with comprehensive analytics
   - Test data includes multi-year variable income history (2023-2025)
-- [x] Income trend charts ✅ COMPLETE
+- [ ] Income trend charts
   - Total income over time line chart with gradient fill
   - Income by source stacked area chart
   - Income by household member grouped bar chart
@@ -284,7 +317,7 @@ Transform from a simple budgeting tool into a comprehensive, intelligent financi
   - Color-coded trend indicators (increasing/decreasing/stable)
   - Visual comparison of income sources and household members
   - Integrated into Income section as "Trends" sub-tab
-- [x] Year-over-year income comparison ✅ COMPLETE
+- [ ] Year-over-year income comparison
   - Backend API endpoint for year-over-year data aggregation ✅
   - Comprehensive statistics by year (total, monthly average, payment count) ✅
   - Year-over-year change calculations (amount and percentage) ✅
@@ -303,7 +336,7 @@ Transform from a simple budgeting tool into a comprehensive, intelligent financi
   - Income by household member breakdown per year ✅
   - Visual progress bars and charts throughout ✅
   - Mobile-optimized responsive design ✅
-- [x] Tax bracket estimator ✅ COMPLETE
+- [ ] Tax bracket estimator
   - Backend API endpoint `/api/income/tax-estimate` with comprehensive tax calculations
   - 2025 Federal tax brackets for all filing statuses (Single, Married Joint, Married Separate, Head of Household) ✅
   - Standard deduction calculations per filing status ✅
@@ -327,7 +360,7 @@ Transform from a simple budgeting tool into a comprehensive, intelligent financi
   - Interactive tax breakdown with visual progress bars ✅
   - Detailed income breakdown modal ✅
   - Test data for ~$62k/year household (married-joint filing) ✅
-- [x] Retirement contribution tracking ✅ COMPLETE
+- [ ] Retirement contribution tracking
   - Multiple retirement account types (401k, 403b, Traditional IRA, Roth IRA, SEP IRA, SIMPLE IRA) ✅
   - 2025 IRS contribution limits auto-filled ✅
   - Employer matching support with percentage and salary limit tracking ✅
