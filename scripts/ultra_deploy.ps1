@@ -13,7 +13,7 @@ $newVersion = ""
 if (Test-Path $versionFile) {
     # Find the first non-comment line
     $version = Get-Content $versionFile | Where-Object { $_ -notmatch '^#' } | Select-Object -First 1
-    if ($version -and ($version -match '^(\\d+)\\.(\\d+)\\.(\\d+)$')) {
+    if ($version -and ($version -match '^(\d+)\.(\d+)\.(\d+)$')) {
         $parts = $version -split '\.'
         $parts[2] = [int]$parts[2] + 1
         $newVersion = "$($parts[0]).$($parts[1]).$($parts[2])"
