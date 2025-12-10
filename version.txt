@@ -1,4 +1,4 @@
 # Version file for Financial Assistant App
 # This file is used by the ultra-deploy script to track the current version.
 # Format: MAJOR.MINOR.PATCH
-0.1.2
+0.1.3
