@@ -11,16 +11,33 @@ param(
 $versionFile = "version.txt"
 $newVersion = ""
 if (Test-Path $versionFile) {
-    $version = Get-Content $versionFile | Select-Object -First 1
-    $parts = $version -split '\.'
-    if ($parts.Count -eq 3) {
+    # Find the first non-comment line
+    $version = Get-Content $versionFile | Where-Object { $_ -notmatch '^#' } | Select-Object -First 1
+    if ($version -and ($version -match '^(\\d+)\\.(\\d+)\\.(\\d+)$')) {
+        $parts = $version -split '\.'
         $parts[2] = [int]$parts[2] + 1
         $newVersion = "$($parts[0]).$($parts[1]).$($parts[2])"
-        Set-Content $versionFile $newVersion
+        # Overwrite only the version line, keep comments if present
+        $lines = Get-Content $versionFile
+        $newLines = @()
+        $versionWritten = $false
+        foreach ($line in $lines) {
+            if (-not $versionWritten -and $line -notmatch '^#') {
+                $newLines += $newVersion
+                $versionWritten = $true
+            } else {
+                $newLines += $line
+            }
+        }
+        if (-not $versionWritten) { $newLines += $newVersion }
+        Set-Content $versionFile $newLines
         Write-Host "Version bumped to $newVersion"
-    } else {
-        Write-Host "Invalid version format. Skipping bump."
+    } elseif ($version) {
+        Write-Host "Invalid version format in version.txt: $version. Skipping bump."
         $newVersion = $version
+    } else {
+        Write-Host "No valid version found in version.txt. Skipping bump."
+        $newVersion = "unknown"
     }
 } else {
     Write-Host "No version.txt found. Skipping version bump."
